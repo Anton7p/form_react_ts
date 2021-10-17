@@ -1,0 +1,133 @@
+.output,
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &_row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    height: 110px;
+    @media (max-width: 990px) {
+      flex-direction: column;
+      height: auto;
+    }
+
+    &__checkbox {
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      @media (max-width: 576px) {
+        flex-direction: column;
+        height: auto;
+      }
+    }
+
+    &__title {
+      width: 179px;
+      height: 37px;
+      font-family: ALS Hauss;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 37px;
+      color: #271919;
+      @media (max-width: 576px) {
+        margin-left: 15px;
+      }
+    }
+
+    &__text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 65px;
+      @media (max-width: 576px) {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        gap: 12px;
+      }
+    }
+  }
+
+
+
+  padding: 0 15px;
+
+  @media (max-width: 990px) {
+    padding: 15px 15px;
+
+  }
+}
+
+.output {
+
+  &_row {
+    align-items: center;
+
+    &__row,
+    &__column {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 30px;
+      @media (max-width: 990px) {
+        margin-bottom: 0;
+      }
+    }
+
+    &__row {
+      flex-direction: row;
+      gap: 15px;
+      @media (max-width: 990px) {
+        flex-direction: column;
+        margin-bottom: 0;
+      }
+    }
+
+    small {
+      font-family: ALS Hauss;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 27px;
+      color: #A2A2AE;
+    }
+
+    p {
+      font-family: ALS Hauss;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 21px;
+      display: flex;
+      align-items: center;
+      color: #B2B2B2;
+
+    }
+
+    span {
+      font-family: ALS Hauss;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 150%;
+      display: flex;
+      align-items: center;
+      color: #271919;
+    }
+  }
+
+}
+

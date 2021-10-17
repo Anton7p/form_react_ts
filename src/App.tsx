@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import style from './App.module.scss';
+import Form from './components/global/Form';
+import DataFormOutput from './components/global/DataFormOutput';
+
+import { User } from './utils/types/types';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [userData, setUserData] = useState<User>();
+	return (
+		<div className={'_container'}>
+			<div className={style.app}>
+				<Form showUserData={setUserData} />
+				<DataFormOutput user={userData} />
+			</div>
+		</div>
+	);
 }
 
 export default App;

@@ -1,0 +1,52 @@
+.icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+
+  svg {
+    margin-top: 4px;
+  }
+
+  @media (max-width: 576px) {
+    gap: 4px;
+  }
+
+
+}
+
+.close {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  gap: 24px;
+
+}
+
+.text {
+  white-space: nowrap;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-family: ALS Hauss;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 150%;
+  color: #A2A2AE;
+  max-width: 250px;
+  width: 100%;
+}
+
+.check {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  font-family: ALS Hauss;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #271919;
+
+}
