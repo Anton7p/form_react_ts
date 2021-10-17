@@ -16,10 +16,10 @@ import {FieldNameType, FormSubmit, User} from "../../utils/types/types";
 
 
 const popupData = [
-    {value: "ASDднее профессиональное"},
-    {value: "dddднее профессиональное"},
-    {value: "fffнее профессиальное"},
-    {value: "aaaaaaaaсе"},
+    {value: "Московский технический университет"},
+    {value: "МОСиНТЕХ"},
+    {value: "Третий московский филиал"},
+    {value: "МОСГУ"},
     {value: "aaaaaaaaсе"},
     {value: "aaaaaсе"},
     {value: "aaaaaaaaaaaсе"},
@@ -27,16 +27,17 @@ const popupData = [
     {value: "aaaaaсsssssssе"},
     {value: "aaaaaсsssssssе"},
     {value: "aaaaafffffffсе"},
-    {value: "Высшее"},
-    {value: "Магистратура"},
+
 ]
 
 const dropdownData = [
     {value: "Среднее профессиональное"},
-    {value: "Среднее п"},
-    {value: "Среднее профьное"},
+    {value: "Среднее профессиональное"},
+    {value: "Среднее профессиональное"},
     {value: "Высшее"},
     {value: "Высшее"},
+    {value: "Высшее"},
+    {value: "Магистратура"},
     {value: "Магистратура"},
 ]
 type Props = {
