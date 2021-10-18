@@ -95,10 +95,10 @@ const Form: FC<Props> = ({showUserData}) => {
 
     return (
         <form className={style.form} onSubmit={handleSubmit}>
-            <section className={style.form_row__title}>
+            <div className={style.form_row__title}>
                 <span>Образование</span>
-            </section>
-            <section className={style.form_row}>
+            </div>
+            <div className={style.form_row}>
                 <Dropdown dropdown={dropdownData}
                           name={'education'}
                           handleChangeFieldValue={handleChangeInput}
@@ -109,8 +109,8 @@ const Form: FC<Props> = ({showUserData}) => {
                        searchOrStarIcon={() => <StarIcon color={'#E62B25'}/>}
                        field={year} handleChangeFieldValue={handleChangeInput}
                 />
-            </section>
-            <section className={style.form_row}>
+            </div>
+            <div className={style.form_row}>
                 <Input id={'Введите для выбора ВУЗа'}
                        custom={"search"}
                        name={"university"}
@@ -126,10 +126,10 @@ const Form: FC<Props> = ({showUserData}) => {
                                clearInput={clearInput}
 
                            />}/>
-            </section>
+            </div>
 
 
-            <section className={style.form_row}>
+            <div className={style.form_row}>
                 <Input id={'Серия диплома'}
                        name={"series"}
                        validation={"number"}
@@ -145,9 +145,9 @@ const Form: FC<Props> = ({showUserData}) => {
                     />)
                 }
 
-            </section>
+            </div>
 
-            <section className={style.form_row}>
+            <div className={style.form_row}>
                 {
                     series.value && number.value && (<Input id={'Специальность по диплому'}
                                                             name={"speciality"}
@@ -159,9 +159,9 @@ const Form: FC<Props> = ({showUserData}) => {
                 }
 
 
-            </section>
+            </div>
 
-            <section className={style.form_row}>
+            <div className={style.form_row}>
 
                 {series.value && number.value && speciality.value && (<Input id={'Квалификация по диплому'}
                                                                              name={"qualification"}
@@ -172,10 +172,10 @@ const Form: FC<Props> = ({showUserData}) => {
                                                                                  color={"#F99B1C"}/>}
                 />)}
 
-            </section>
+            </div>
 
 
-            <section className={style.form_row__checkbox}>
+            <div className={style.form_row__checkbox}>
                 <Checkbox title={"checkbox"}
                           label={'Нострификация'}
                           name={
@@ -183,13 +183,13 @@ const Form: FC<Props> = ({showUserData}) => {
                           field={notification} handleChecked={handleChangeInput}
 
                 />
-            </section>
+            </div>
 
-            <section className={style.form_row}>
+            <div className={style.form_row}>
                 <UploadInput name={"url"} setUrl={handleChangeInput} />
-            </section>
+            </div>
 
-            <section className={style.form_row__button}>
+            <div className={style.form_row__button}>
                 <Button text={"Сохранить"}
                         type={"submit"}
                         custom={{
@@ -206,14 +206,14 @@ const Form: FC<Props> = ({showUserData}) => {
                             color: "#A2A2AE"
                         }}/>
 
-            </section>
-            <section className={style.form_row__text}>
+            </div>
+            <div className={style.form_row__text}>
                 <IconWithText custom={"text"} color={"#E62B25"} text={"Поля обязательные для заполнения"}
                               icon={(color) => <StarIcon color={color}/>}/>
 
                 <IconWithText custom={"text"} color={"#E78E24"} text={"Поля видны для всех пользователей"}
                               icon={(color) => <StarIcon color={color}/>}/>
-            </section>
+            </div>
 
         </form>
     );

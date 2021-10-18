@@ -11,11 +11,11 @@ type Props = {
 const DataFormOutput: FC<Props> = ({ user }) => {
 	return (
 		<form className={style.output}>
-			<section className={style.output_row__title}>
+			<div className={style.output_row__title}>
 				<div>Образование</div>
-			</section>
+			</div>
 
-			<section className={style.output_row}>
+			<div className={style.output_row}>
 				<div className={style.output_row__column}>
 					<p>Уровень образования</p>
 					<span>{user?.education.value}</span>
@@ -24,15 +24,15 @@ const DataFormOutput: FC<Props> = ({ user }) => {
 					<p>Год окончания</p>
 					<span> {user?.year.value}</span>
 				</div>
-			</section>
+			</div>
 
-			<section className={style.output_row}>
+			<div className={style.output_row}>
 				<div className={style.output_row__row}>
 					<small>{user?.university.value}</small>
 				</div>
-			</section>
+			</div>
 
-			<section className={style.output_row}>
+			<div className={style.output_row}>
 				<div className={style.output_row__row}>
 					<small>Серия диплома</small>
 					<span>{user?.series.value}</span>
@@ -41,27 +41,27 @@ const DataFormOutput: FC<Props> = ({ user }) => {
 					<small>Номер диплома</small>
 					<span>{user?.number.value}</span>
 				</div>
-			</section>
+			</div>
 
-			<section className={style.output_row}>
+			<div className={style.output_row}>
 				{user?.speciality.value && (
 					<div className={style.output_row__row}>
 						<small>Специальность по диплому</small>
 						<span>{user?.speciality.value}</span>
 					</div>
 				)}
-			</section>
+			</div>
 
-			<section className={style.output_row}>
+			<div className={style.output_row}>
 				{user?.qualification.value && (
 					<div className={style.output_row__row}>
 						<small>Квалификация по диплому</small>
 						<span>{user?.qualification.value}</span>
 					</div>
 				)}
-			</section>
+			</div>
 
-			<section className={style.output_row__checkbox}>
+			<div className={style.output_row__checkbox}>
 				{user?.notification.value && (
 					<IconWithText
 						color={'#E62B25'}
@@ -70,11 +70,11 @@ const DataFormOutput: FC<Props> = ({ user }) => {
 						icon={(color) => <CheckIcon color={color} />}
 					/>
 				)}
-			</section>
+			</div>
 
-			<section className={style.form_row}>
+			<div className={style.form_row}>
 				<DownloadLink url={(user?.url.value as string | undefined)}/>
-			</section>
+			</div>
 		</form>
 	);
 };

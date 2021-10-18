@@ -1,11 +1,11 @@
-import { DropdownType } from '../types/types';
+import {DropdownType} from '../types/types';
 
-export function search(value: string, data: DropdownType[]): DropdownType[] {
-	if (!value || value.length < 3) return [];
+export function search(str: string, data: DropdownType[]): DropdownType[] {
+    if (!str || str.length < 3) return [];
+    return data.filter((el) => {
+        return (
+            el.value.toLowerCase().split(' ').join('').indexOf(str.toLowerCase()) !== -1
+        );
+    });
 
-	const regexp = new RegExp(value, 'gm');
-
-	return data.filter((item) =>
-		item.value.toString().toLowerCase().match(regexp)
-	);
 }
