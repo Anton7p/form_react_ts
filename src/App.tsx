@@ -7,11 +7,12 @@ import { User } from './utils/types/types';
 
 function App() {
 	const [userData, setUserData] = useState<User>();
+	const [url, setUrl] = useState<string>('')
 	return (
 		<div className={'_container'}>
 			<div className={style.app}>
-				<Form showUserData={setUserData} />
-				<DataFormOutput user={userData} />
+				<Form showUserData={setUserData}  setUrl={setUrl}/>
+				<DataFormOutput user={userData} url={url} setUrl={setUrl} />
 			</div>
 		</div>
 	);

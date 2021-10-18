@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, {Dispatch, FC, SetStateAction} from 'react';
 import style from './style.module.scss';
 import DownloadLink from '../ui/InputFile/DownloadLink';
 import { User } from '../../utils/types/types';
@@ -6,9 +6,11 @@ import IconWithText from '../ui/Icon/IconWithText';
 import CheckIcon from '../ui/Icon/CheckIcon';
 
 type Props = {
-	user: User | undefined,
+	user: User | undefined;
+	url:string;
+	setUrl: Dispatch<SetStateAction<string>>,
 };
-const DataFormOutput: FC<Props> = ({ user }) => {
+const DataFormOutput: FC<Props> = ({ user,url,setUrl }) => {
 	return (
 		<form className={style.output}>
 			<div className={style.output_row__title}>
@@ -73,7 +75,7 @@ const DataFormOutput: FC<Props> = ({ user }) => {
 			</div>
 
 			<div className={style.form_row}>
-				<DownloadLink url={(user?.url.value as string | undefined)}/>
+				<DownloadLink url={url} setUrl={setUrl}/>
 			</div>
 		</form>
 	);

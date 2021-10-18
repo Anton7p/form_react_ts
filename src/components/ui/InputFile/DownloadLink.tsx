@@ -3,7 +3,7 @@ import style from './style.module.scss';
 
 type Props = {
 	url: string | undefined,
-	setUrl?: Dispatch<SetStateAction<string>>,
+	setUrl: Dispatch<SetStateAction<string>>,
 };
 const DownloadLink: FC<Props> = ({ url, setUrl }) => {
 	return (

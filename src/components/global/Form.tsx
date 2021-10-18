@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {Dispatch, FC, SetStateAction, useState} from 'react';
 import {Input} from "../ui/Input/Input";
 import SearchIcon from "../ui/Icon/SearchIcon";
 import CloseIcon from "../ui/Icon/CloseIcon";
@@ -12,7 +12,6 @@ import {UploadInput} from "../ui/InputFile/UploadInput";
 
 import IconWithText from "../ui/Icon/IconWithText";
 import {FieldNameType, FormSubmit, User} from "../../utils/types/types";
-
 
 
 const popupData = [
@@ -42,9 +41,10 @@ const dropdownData = [
 ]
 type Props = {
     showUserData: (user: User) => void
+    setUrl:Dispatch<SetStateAction<string>>
 }
 
-const Form: FC<Props> = ({showUserData}) => {
+const Form: FC<Props> = ({showUserData,setUrl}) => {
     const initialState = {
         year: {value: '', error: '', required: true},
         education: {value: '', error: '', required: true},
@@ -57,6 +57,7 @@ const Form: FC<Props> = ({showUserData}) => {
         url: {value: '', error: ''}
     }
     const [user, setUser] = useState<User>(initialState)
+
 
     const {education, year, university, series, number, speciality, qualification, notification} = user
 
@@ -186,7 +187,7 @@ const Form: FC<Props> = ({showUserData}) => {
             </div>
 
             <div className={style.form_row}>
-                <UploadInput name={"url"} setUrl={handleChangeInput} />
+                <UploadInput name={"url"} setUrl={setUrl}/>
             </div>
 
             <div className={style.form_row__button}>

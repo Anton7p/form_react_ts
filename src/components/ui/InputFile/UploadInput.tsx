@@ -1,14 +1,10 @@
-import React, { FC } from 'react';
+import React, {Dispatch, FC, SetStateAction} from 'react';
 import style from './style.module.scss';
 import { FieldNameType } from '../../../utils/types/types';
 
 export interface Props {
 	name: FieldNameType;
-	setUrl?: (
-		value: string | boolean,
-		name: FieldNameType,
-		error: string
-	) => void;
+	setUrl: Dispatch<SetStateAction<string>>
 }
 
 export const UploadInput: FC<Props> = (props) => {
@@ -37,7 +33,7 @@ export const UploadInput: FC<Props> = (props) => {
 						typeof event.target.result === 'string' &&
 						setUrl
 					) {
-						setUrl(event.target.result, name, '');
+						setUrl(event.target.result);
 					}
 				};
 			}
